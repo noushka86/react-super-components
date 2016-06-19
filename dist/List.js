@@ -70,6 +70,12 @@ var List = function (_React$Component) {
       return _lodash2.default.sortBy(data, sortBy);
     }
   }, {
+    key: 'sortAndGroupData',
+    value: function sortAndGroupData(datat, sortBy, groupBy) {
+      var sortedData = this.sortData(data, sortBy);
+      return this.groupDataAndAddHeaders(sortedData, groupBy);
+    }
+  }, {
     key: 'checkTypesAndReturnMatchingItemType',
     value: function checkTypesAndReturnMatchingItemType(index, data) {
       var itemTypes = this.props.itemTypes;
@@ -100,6 +106,10 @@ var List = function (_React$Component) {
       var sortBy = _props.sortBy;
 
       var modifiableData = data;
+
+      if(sortBy && groupBy) {
+        modifiableData = this.sortAndGroupData(modifiableData, sortBy, groupBy);
+      }
 
       if (sortBy) {
         modifiableData = this.sortData(modifiableData, sortBy);

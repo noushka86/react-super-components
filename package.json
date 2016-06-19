@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/poetic/react-super-components"
+    "url": "git@github.com:noushka86/react-super-components.git"
   },
   "license": "MIT",
   "scripts": {
